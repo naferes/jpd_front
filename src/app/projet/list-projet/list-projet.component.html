@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Activité Projet</h3>
+     
+      </div>
+       <div class="card-body table-responsive p-0" >
+        <table class="table table-head-fixed text-nowrap">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>1er contact</th>
+              <th>Commerciale</th>
+              <th>Entreprise</th>
+              <th>Statut</th>
+              <th>% chance </th>
+              <th>mois signature</th>
+              <th>montant</th>
+              <th>raison echec</th>
+              <th>commentaire</th>
+            </tr>
+          </thead>
+       
+            <tbody>
+                <tr *ngFor="let projet of projets.projets" role="row" class="odd"> 
+                    <td class="sorting_1">{{projet.source}}</td>
+                    <td>{{projet.dateContacte| slice : 0 : 10}}</td>
+                    <td>{{projet.username}}</td> 
+                    <td>{{projet.nomEntreprise}}</td>
+                    <td>{{projet.statut}}</td> 
+                    <td>{{projet.chanceProjEnCours}}</td>
+                    <td>{{projet.moisProjSigne}}</td>
+                    <td>{{projet.montantProjSigne}}</td>
+                    <td>{{projet.raison}}</td>
+                    <td>{{projet.commentaire}}</td> 
+                    <td>
+                  <i class="fa fa-wrench" style="color: green;cursor: pointer;"  [routerLink]="[]">
+                    </i>
+               </td>
+                 <td>
+                    <i class="fa fa-trash" style="color: red;cursor: pointer;" (click)="deleteMethod(projet.id)" >
+                      <a [routerLink]=""></a> </i>
+                 </td>  
+              </tr> 
+            </tbody>
+            
+        </table>
+      </div>
+      <div class="card-footer">
+
+      </div>
+
+      <!-- /.card-footer-->
+    </div>
+  </div>

@@ -1,0 +1,73 @@
+
+  <div class="card ">
+    <div class="card-header">
+      <h3 class="card-title">Ajouter une nouvelle tache
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form role="form" id="quickForm" [formGroup]="dispatchingform">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="Date">Date<span class="text-danger"> *</span></label>
+          <input type="date" formControlName="date" class="form-control" 
+            placeholder="date">
+<div *ngIf="date.invalid && (date.dirty || date.touched)" class="alert alert-danger">
+              <div *ngIf="date.errors.required">
+                date obligatoire
+              </div>   
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Commerciale<span class="text-danger">*</span></label>
+          <select  formControlName="username" class="form-control">
+            <option *ngFor="let user of commercials.commercials" role="row" class="odd" [value]=user.name>{{user.name}}</option>
+            
+          </select>         
+      </div>
+       <div class="form-group">
+          <label>Entreprise<span class="text-danger">*</span></label>
+          <select  formControlName="entreprise" class="form-control">
+            <option *ngFor="let entreprise of entreprises.entreprises" role="row" class="odd" [value]=entreprise.nom>{{entreprise.nom}}</option>
+            
+          </select>         
+      </div>
+        <div class="form-group">
+          <label for="deadline">Deadline <span class="text-danger"> *</span></label>
+          <input type="date" formControlName="deadline" class="form-control" id="deadline"
+            placeholder="deadline">
+            <div *ngIf="deadline.invalid && (deadline.dirty || deadline.touched)" class="alert alert-danger">
+              <div *ngIf="deadline.errors.required">
+                Deadline obligatoire
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tache<span class="text-danger">*</span></label>
+          <input type="text" formControlName="tache" class="form-control" id="tache"
+          placeholder="Tache">
+          <div *ngIf="tache.invalid && (tache.dirty || tache.touched)" class="alert alert-danger">
+            <div *ngIf="tache.errors.required">
+            tache est obligatoire
+            </div>
+          </div>    
+        </div>
+
+          <div class="form-group">
+            <label >Commentaire<span class="text-danger"> *</span></label>
+            <input type="text" formControlName="commentaire" class="form-control" 
+              placeholder="Commentaire">
+             <div *ngIf="commentaire.invalid && (commentaire.dirty || commentaire.touched)" class="alert alert-danger">
+                <div *ngIf="commentaire.errors.required">
+                 Commentaire obligatoire
+                </div>
+              </div>
+            </div> 
+        </div>   
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button type="submit" (click)="addNewDispatching()" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>

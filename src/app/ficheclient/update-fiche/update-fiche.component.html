@@ -1,0 +1,112 @@
+
+  <div class="card ">
+    <div class="card-header">
+      <h3 class="card-title">Modifier un rendez-vous
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+   
+    <form role="form" id="quickForm" [formGroup]="ficheform">
+      <!-- <div class="card-body">
+        <div class="form-group">
+             
+        <label>Entreprise<span class="text-danger">*</span></label>
+        <select  formControlName="entreprise" class="form-control">
+          <option *ngFor="let entreprise of entreprises.entreprises" role="row" class="odd" [value]=entreprise.nom>{{entreprise.nom}}</option>
+          
+        </select> 
+        </div>        
+    </div>-->
+    <div class="card-body">
+    <div class="form-group">
+        <label for="date1">Date du premier rendez-vous<span class="text-danger"> *</span></label>
+        <input type="date" formControlName="date1" class="form-control" 
+          placeholder="date"[ngModel] ="ficheX.date1 | date:'yyyy-MM-dd'" (ngModelChange)="ficheX.date1 = $event" name="date1">
+<div *ngIf="date1.invalid && (date1.dirty || date1.touched)" class="alert alert-danger">
+            <div *ngIf="date1.errors.required">
+              date obligatoire
+            </div>   
+          </div>
+      </div>
+    </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="compterendu1">Compte Rendu du premier rendez-vou<span class="text-danger"> *</span></label>
+          <input type="text" formControlName="compterendu1" class="form-control" 
+            placeholder="compte rendu" [(ngModel)]="ficheX.compterendu1" name="compterendu1">
+            <div *ngIf="compterendu1.invalid && (compterendu1.dirty || compterendu1.touched)" class="alert alert-danger">
+              <div *ngIf="compterendu1.errors.required">
+                Compte Rendu obligatoire
+              </div>   
+            </div>
+        </div>  
+        </div>   
+        <div class="card-body">
+            <div class="form-group">
+                <label for="date2">Date du deuxiéme rendez-vous<span class="text-danger"> *</span></label>
+                <input type="date" formControlName="date2" class="form-control" 
+                  placeholder="date" [ngModel] ="ficheX.date2 | date:'yyyy-MM-dd'" (ngModelChange)="ficheX.date2 = $event" name="date2">
+              </div>
+            </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="compterendu2">Compte Rendu du deuxiéme rendez-vou<span class="text-danger"> *</span></label>
+                  <input type="text" formControlName="compterendu2" class="form-control" 
+                    placeholder="compte rendu"[(ngModel)]="ficheX.compterendu2" name="compterendu2">
+                    
+                </div>  
+                </div>   
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="date3">Date du troisiéme rendez-vous<span class="text-danger"> *</span></label>
+                        <input type="date" formControlName="date3" class="form-control" 
+                          placeholder="date" [ngModel] ="ficheX.date3 | date:'yyyy-MM-dd'" (ngModelChange)="ficheX.date3 = $event" name="date3">
+          
+                      </div>
+                    </div>
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="compterendu3">Compte Rendu du troisiéme rendez-vou<span class="text-danger"> *</span></label>
+                          <input type="text" formControlName="compterendu3" class="form-control" 
+                            placeholder="compte rendu" [(ngModel)]="ficheX.compterendu3" name="compterendu3">
+                
+                        </div>  
+                        </div>   
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="date4">Date du quatriéme rendez-vous<span class="text-danger"> *</span></label>
+                                <input type="date" formControlName="date4" class="form-control" 
+                                  placeholder="date" [ngModel] ="ficheX.date4 | date:'yyyy-MM-dd'" (ngModelChange)="ficheX.date4 = $event" name="date4">
+                              </div>
+                            </div>
+                              <div class="card-body">
+                                <div class="form-group">
+                                  <label for="compterendu4">Compte Rendu du quatriéme rendez-vou<span class="text-danger"> *</span></label>
+                                  <input type="text" formControlName="compterendu4" class="form-control" 
+                                    placeholder="compte rendu" [(ngModel)]="ficheX.compterendu4" name="compterendu4">
+                                    
+                                </div>  
+                                </div>   
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="date5">Date du cinquiéme rendez-vous<span class="text-danger"> *</span></label>
+                                        <input type="date" formControlName="date5" class="form-control" 
+                                          placeholder="date" [ngModel] ="ficheX.date5 | date:'yyyy-MM-dd'" (ngModelChange)="ficheX.date5 = $event" name="date5">
+                
+                                      </div>
+                                    </div>
+                                      <div class="card-body">
+                                        <div class="form-group">
+                                          <label for="compterendu5">Compte Rendu du cinquiéme rendez-vous<span class="text-danger"> *</span></label>
+                                          <input type="text" formControlName="compterendu5" class="form-control" 
+                                            placeholder="compte rendu" [(ngModel)]="ficheX.compterendu5" name="compterendu5">
+                                    
+                                        </div>  
+                                        </div>   
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button type="submit" (click)="updatefiche()" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>

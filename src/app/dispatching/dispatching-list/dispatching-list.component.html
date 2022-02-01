@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">dispatching</h3>
+     
+      </div>
+       <div class="card-body table-responsive p-0" >
+        <table class="table table-head-fixed text-nowrap">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Commerciale</th>
+              <th>Entreprise</th>
+              <th>Deadline</th>
+              <th>Tache</th>
+              <th>Commentaire</th>
+            </tr>
+          </thead>
+       
+            <tbody>
+              <tr *ngFor="let dispatching of dispatchings.dispatchings" role="row" class="odd">
+                <td class="sorting_1">{{dispatching.date| slice : 0 : 10}}</td>
+                <td>{{dispatching.user}}</td>
+                <td>{{dispatching.entreprise}}</td>
+                <td>{{dispatching.deadline | slice : 0 : 10}}</td>
+                <td>{{dispatching.tache}}</td>
+                <td>{{dispatching.commentaire}}</td>
+                <td>
+                  <i class="fa fa-wrench" style="color: green;cursor: pointer;"  [routerLink]="['/dashboard/dispatching/update-dispatching', dispatching.id]">
+                    </i>
+               </td>
+                 <td>
+                    <i class="fa fa-trash" style="color: red;cursor: pointer;"  (click)="deleteMethod(dispatching.id)">
+                      <a [routerLink]="['/update-dispatching/:id']"></a> </i>
+                 </td>
+                 
+              </tr> 
+            </tbody>
+            
+        </table>
+      </div>
+      <div class="card-footer">
+
+      </div>
+
+      <!-- /.card-footer-->
+    </div>
+  </div>

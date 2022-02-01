@@ -1,0 +1,109 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Analyses Chiffre d'affaires global</h1>
+        </div>
+        
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">
+             
+           
+            </div>
+             <div class="card-body table-responsive p-0" >
+              <table class="table table-head-fixed text-nowrap">
+                <thead>
+                  <tr>
+                    <th>Statut</th>
+                    <th>JANVIER</th>
+                    <th>FÉVRIER</th>
+                    <th>MARS</th>
+                    <th>AVRIL</th>
+                    <th>MAI</th>
+                    <th>JUIN</th>
+                    <th>JUILLET</th>
+                    <th>AOUT</th>
+                    <th>SEPTEMBRE</th>
+                    <th>OCTOBRE</th>
+                    <th>NOVEMBRE</th>
+                    <th>DÉCEMBRE</th>
+                    <th>TOTAL</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    <tr >
+                     <td>Projet signé </td>
+                     
+                        <td >{{x.janNbre}}</td>
+                        <td >{{x.fevNbre}}</td>
+                        <td >{{x.marsNbre}}</td>
+                        <td >{{x.avrNbre}}</td>
+                        <td >{{x.mayNbre}}</td>
+                        <td >{{x.juinNbre}}</td>
+                        <td >{{x.juillNbre}}</td>
+                        <td >{{x.aoutNbre}}</td>
+                        <td >{{x.sepNbre}}</td>
+                        <td >{{x.octNbre}}</td>
+                        <td >{{x.novNbre}}</td>
+                        <td >{{x.decNbre}}</td>
+                        <td>{{x.total}}</td>    
+                    </tr> 
+                    <tr >
+                        <td>Montant signé </td>
+                        
+                           <td >{{x.janMont}}</td>
+                           <td >{{x.fevMont}}</td>
+                           <td >{{x.marsMont}}</td>
+                           <td >{{x.avrMont}}</td>
+                           <td >{{x.mayMont}}</td>
+                           <td >{{x.juinMont}}</td>
+                           <td >{{x.juillMont}}</td>
+                           <td >{{x.aoutMont}}</td>
+                           <td >{{x.sepMont}}</td>
+                           <td >{{x.octMont}}</td>
+                           <td >{{x.novMont}}</td>
+                           <td >{{x.decMont}}</td>
+                           <td>{{x.montantSigne}}</td>    
+                       </tr> 
+                  </tbody>
+              </table>
+              
+            </div>
+            <br>
+            <br>
+            <div class="container">
+            
+             
+                  <div class="row">
+                    <div class="col-sm"><div class="col-sm , alert alert-warning"> Montant signé :  {{x.montantSigne}}</div></div>
+                    <div class="col-sm"> <div class="col-sm , alert alert-warning">Rappel objectif annuel :  {{x.objectifAnnuel}}</div></div>
+                    <div class="col-sm"><div class="col-sm , alert alert-warning">Pourcentage de l'objectif :   {{x.pourcentage | number}}%</div></div>
+                  </div>
+                
+              </div>
+            <div class="card-footer">
+        
+            </div>
+        
+            <!-- /.card-footer-->
+          </div>
+    </div>
+  </section>   
+  
+  
+   
+  
+
+   
+ 
+  

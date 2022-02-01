@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Fiches</h3>
+      </div>
+       <div class="card-body table-responsive p-0" >
+        <table class="table table-head-fixed text-nowrap">
+          <thead>
+            <tr>
+              <th rowspan="2">Client</th>
+              <th colspan="2">Premier RDV</th>
+              <th colspan="2">Deuxiéme RDV</th>
+              <th colspan="2">Troisiéme RDV</th>
+              <th colspan="2">Quatrieme RDV</th>
+              <th colspan="2">cinquieme RDV</th>
+            </tr>
+            <tr>
+              
+                <th>date</th>
+                <th>compte Rendu</th>
+                <th>date</th>
+                <th>compte Rendu</th>
+                <th>date</th>
+                <th>compte Rendu</th>
+                <th>date</th>
+                <th>compte Rendu</th>
+                <th>date</th>
+                <th>compte Rendu</th>
+            
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let fiche of fiches.fiches |paginate: { itemsPerPage: 10, currentPage: p }" role="row" class="odd" >
+                <td>{{fiche.entreprise}}</td>
+                <td >{{fiche.date1  | slice : 0 : 10}}</td>
+                <td width=33%>{{fiche.compterendu1}}</td>
+                <td class="sorting_1">{{fiche.date2 | slice : 0 : 10}}</td>
+                <td class="sorting_1">{{fiche.compterendu2}}</td>
+                <td class="sorting_1">{{fiche.date3 | slice : 0 : 10}}</td>
+                <td class="sorting_1">{{fiche.compterendu3}}</td>
+                <td class="sorting_1">{{fiche.date4 | slice : 0 : 10}}</td>
+                <td class="sorting_1">{{fiche.compterendu4}}</td>
+                <td class="sorting_1">{{fiche.date5 | slice : 0 : 10}}</td>
+                <td class="sorting_1">{{fiche.compterendu5}}</td>
+                <td>
+                  <i class="fa fa-wrench" style="color: green;cursor: pointer;"  [routerLink]="['/dashboard/ficheclient/update-fiche',fiche.id]"></i>
+               </td>
+                 <td>
+                    <i class="fa fa-trash" style="color: red;cursor: pointer;" (click)="deleteMethod(fiche.id)" ></i>
+                 </td>
+              </tr> 
+            </tbody>
+            
+        </table>
+
+      </div>
+      <ul class="pagination">  
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+        </ul>
+      <div class="card-footer">
+
+      </div>
+
+      <!-- /.card-footer-->
+    </div>
+  </div>

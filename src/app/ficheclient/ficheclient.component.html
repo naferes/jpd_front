@@ -1,0 +1,29 @@
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Fiche Clients</h1>
+        </div>
+        <div class="col-sm-6">
+            <a class="btn btn-default float-right" [routerLink]="['/dashboard/ficheclient/addfiche']">Ajouter fiche
+            </a>
+            <a class="btn btn-default float-right" [routerLink]="['/dashboard/ficheclient']">Liste des taches
+            </a> 
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </section>   
+  
+  
+   
+  
+  

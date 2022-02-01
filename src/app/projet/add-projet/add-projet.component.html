@@ -1,0 +1,126 @@
+
+  <div class="card ">
+    <div class="card-header">
+      <h3 class="card-title">Ajouter une activité
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+   
+    <form role="form" id="quickForm" [formGroup]="actform">
+        <div class="card-body">
+        <div class="form-group">
+            <label>Source prospection <span class="text-danger">*</span></label>
+            <select name="source" formControlName="source" class="form-control">
+              <option value="Prospection directe" selected="selected">Prospection directe</option>
+              <option value="Appel direct">Appel direct</option>
+              <option value="Mailing">Mailing</option>
+              <option value="Salon">Salon</option>
+            </select>
+          
+          </div>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="dateContacte">Date du premier contact<span class="text-danger"> *</span></label>
+                <input type="date" formControlName="dateContacte" class="form-control" 
+                  placeholder="date">
+        <div *ngIf="dateContacte.invalid && (dateContacte.dirty || dateContacte.touched)" class="alert alert-danger">
+                    <div *ngIf="dateContacte.errors.required">
+                      date obligatoire
+                    </div>   
+                  </div>
+              </div>
+            </div>
+            <div class="card-body">
+            <div class="form-group">
+                <label>Commerciale<span class="text-danger">*</span></label>
+                <select  formControlName="username" class="form-control">
+                  <option *ngFor="let user of commercials.commercials" role="row" class="odd" [ngvalue]=user.name>{{user.name}}</option>
+                  
+                </select>         
+            </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                     
+                <label>Entreprise<span class="text-danger">*</span></label>
+                <select  formControlName="nomEntreprise" class="form-control">
+                  <option *ngFor="let entreprise of entreprises.entreprises" role="row" class="odd" [value]=entreprise.nom>{{entreprise.nom}}</option>
+                  
+                </select> 
+                </div>        
+            </div>
+     
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Statut Actuel <span class="text-danger">*</span></label>
+                    <select name="statu" formControlName="statu" class="form-control">
+                      <option value="RDV à fixer" selected="selected">RDV à fixer</option>
+                      <option value="RDV pris">RDV pris</option>
+                      <option value="RDV fait">RDV fait</option>
+                      <option value="Signé">Signé</option>
+                      <option value="Sans Suite-AbandonnéT">Sans Suite-Abandonné</option>
+                      <option value="Perdu">Perdu</option>
+                      <option value="En cours de négociation">En cours de négociation</option>
+                    </select>
+                  </div>
+                </div>
+
+            
+          
+            <div class="card-body">
+              <div class="form-group">
+                <label for="chanceProjEnCours"> % Chance<span class="text-danger"> *</span></label>
+                <input type="number" formControlName="chanceProjEnCours" class="form-control" 
+                  placeholder="%chance">
+              </div>  
+              </div>   
+        
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="moisProjSigne">mois de signature<span class="text-danger"> *</span></label>
+                  <select name="moisProjSigne" formControlName="moisProjSigne" class="form-control">
+                    <option value="Janvier" selected="selected">janvier</option>
+                    <option value="Fevrier">février</option>
+                    <option value="Mars">mars</option>
+                    <option value="Avril">avril</option>
+                    <option value="May">mai</option>
+                    <option value="Juin">juin</option>
+                    <option value="Juillet">juillet</option>
+                    <option value="Aout">aout</option>
+                    <option value="Septmebre">septembre</option>
+                    <option value="Octobre">octobre</option>
+                    <option value="Novembre">novembre</option>
+                    <option value="Decembre">décembre</option>
+                  </select>
+                </div>  
+
+                </div>   
+                <div class="card-body">
+                    <div class="form-group">
+                      <label for="montantProjSigne">Montant<span class="text-danger"> *</span></label>
+                      <input type="number" formControlName="montantProjSigne" class="form-control" 
+                        >
+                    </div>  
+                    </div> 
+                    <div class="card-body">
+                        <div class="form-group">
+                          <label for="raison">raison de l'échec<span class="text-danger"> *</span></label>
+                          <input type="text" formControlName="raison" class="form-control" 
+                            placeholder="raison">
+                        </div>  
+                        </div> 
+                        <div class="card-body">
+                            <div class="form-group">
+                              <label for="commentaire">Commentaire<span class="text-danger"> *</span></label>
+                              <input type="text" formControlName="commentaire" class="form-control" 
+                                placeholder="commentaire">
+                            </div>  
+                            </div> 
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary"(click)="addnewact()">Submit</button>
+      </div>
+    </form>
+  </div>

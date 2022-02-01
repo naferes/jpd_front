@@ -1,0 +1,92 @@
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Analyse de source des prospects</h3>
+    
+      </div>
+
+ 
+        <div class="card-body">
+            <div class="form-group">
+                <label>Commerciale</label>
+                <select #idSelect class="form-control"  (change)="selecteduser(idSelect.value)" value="commercials.commercials[0].id">
+                    <option disabled selected>Choisir un commercial  </option>
+                  
+                    <option *ngFor="let user of commercials.commercials" role="row" class="odd" value="{{user.id}}" >{{user.name}}</option>
+                  
+                </select>         
+            </div>
+        </div>
+            
+
+      <br>
+      
+       <div class="card-body table-responsive p-0" >
+        
+        <table class="table table-head-fixed text-nowrap">
+          <thead>
+            <tr>
+              <th>Origine/Nombre</th>
+              <th>JANVIER</th>
+              <th>FÉVRIER</th>
+              <th>MARS</th>
+              <th>AVRIL</th>
+              <th>MAI</th>
+              <th>JUIN</th>
+              <th>JUILLET</th>
+              <th>AOUT</th>
+              <th>SEPTEMBRE</th>
+              <th>OCTOBRE</th>
+              <th>NOVEMBRE</th>
+              <th>DÉCEMBRE</th>
+              <th>TOTAL</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          
+          <tbody>
+ 
+            <ng-container *ngFor="let sub of results">
+         
+            
+              <tr  *ngFor="let x of sub ">
+                <td>{{x.obj2.status}}</td>
+                <td>{{x.obj1.jan+x.obj2.jan}}</td>
+                <td>{{x.obj1.fev+x.obj2.fev}}</td>
+                <td>{{x.obj1.mars+x.obj2.mars}}</td>
+                <td>{{x.obj1.avr+x.obj2.avr}}</td>
+                <td>{{x.obj1.may+x.obj2.may}}</td>
+                <td>{{x.obj1.juin+x.obj2.juin}}</td>
+                <td>{{x.obj1.juill+x.obj2.juill}}</td>
+                <td>{{x.obj1.aout+x.obj2.aout}}</td>
+                <td>{{x.obj1.sep+x.obj2.sep}}</td>
+                <td>{{x.obj1.oct+x.obj2.oct}}</td>
+                <td>{{x.obj1.nov+x.obj2.nov}}</td>
+                <td>{{x.obj1.dec+x.obj2.dec}}</td>
+                <td>{{x.obj1.long+x.obj2.long}}</td>
+                <td>{{((x.obj1.long+x.obj2.long)/somme)| percent}}</td>
+              </tr> 
+            </ng-container>      
+
+ <tr>
+   <td>Total</td>
+<td *ngFor="let y of res ">{{y}}</td>
+<td>100%</td>
+</tr>
+ 
+            
+        
+       
+            </tbody>
+          
+        </table>
+      
+      </div>
+      <div class="card-footer">
+  
+      </div>
+  
+      <!-- /.card-footer-->
+    </div>
+  </div>
+  

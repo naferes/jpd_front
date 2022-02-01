@@ -1,0 +1,58 @@
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Statut des dossiers (global)</h3>
+       </div>
+       <div class="row">
+        <div class="col-sm-5">
+            <div class="card-body table-responsive p-0" >
+                <table class="table table-head-fixed text-nowrap">
+                    <thead>
+                      <tr>
+                        <th>Statut</th>
+                        <th>Nombre</th>
+                        <th>Pourcentage</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <ng-container *ngFor="let sub of results">
+                        <tr *ngFor="let x of sub">
+                           <td>{{x.obj1.statut}}</td>
+                           <td>{{x.obj1.nbre+x.obj2.nbre}}</td>
+                           <td>{{((x.obj1.nbre+x.obj2.nbre)/somme)| percent}}</td>
+                        </tr> 
+                      </ng-container>
+                      <tr>
+                        <td >Total</td>
+                        <td>{{somme}}</td>
+                        <td>100%</td>
+                      </tr>
+                      </tbody>
+                  
+                    </table>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <div style="display: block;">
+                <canvas baseChart 
+                  [datasets]="barChartData"
+                  [labels]="status"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [colors]="barChartColors"
+                  [chartType]="barChartType">
+                </canvas>
+              </div>
+              
+        </div>
+      </div>
+       
+      <div class="card-footer">
+  
+      </div>
+  
+      <!-- /.card-footer-->
+    </div>
+  </div>
+  

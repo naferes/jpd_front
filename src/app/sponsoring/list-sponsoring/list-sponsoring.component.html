@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Activité sponsoring/parteneriat</h3>
+     
+      </div>
+       <div class="card-body table-responsive p-0" >
+        <table class="table table-head-fixed text-nowrap">
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>1er contact</th>
+              <th>Commerciale</th>
+              <th>Entreprise</th>
+              <th>service</th>
+              <th>Statu</th>
+              <th>Type</th>
+              <th>Contrepartie </th>
+              <th>mois signature</th>
+              <th>montant</th>
+              <th>raison echec</th>
+              <th>commentaire</th>
+            </tr>
+          </thead>
+       
+            <tbody>
+              <tr *ngFor="let sponsoring of Sponsorings.partSpons" role="row" class="odd">
+                <td class="sorting_1">{{sponsoring.source}}</td>
+                <td>{{sponsoring.dateContacte| slice : 0 : 10}}</td>
+                <td>{{sponsoring.username}}</td>
+                <td>{{sponsoring.nomEntreprise}}</td>
+                <td>{{sponsoring.Service}}</td>
+                <td>{{sponsoring.statut}}</td>
+                <td>{{sponsoring.typeConv}}</td>
+                <td>{{sponsoring.contrepartie}}</td>
+                <td>{{sponsoring.moiSign}}</td>
+                <td>{{sponsoring.montantSign}}</td>
+                <td>{{sponsoring.raison}}</td>
+                <td>{{sponsoring.commentaire}}</td>
+                <td>
+                  <i class="fa fa-wrench" style="color: green;cursor: pointer;"  [routerLink]="[]">
+                    </i>
+               </td>
+                 <td>
+                    <i class="fa fa-trash" style="color: red;cursor: pointer;" (click)="deleteMethod(sponsoring.id)" >
+                      <a [routerLink]=""></a> </i>
+                 </td>  
+              </tr> 
+            </tbody>
+            
+        </table>
+      </div>
+      <div class="card-footer">
+
+      </div>
+
+      <!-- /.card-footer-->
+    </div>
+  </div>

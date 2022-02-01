@@ -1,0 +1,50 @@
+
+  <div class="card ">
+    <div class="card-header">
+      <h3 class="card-title">Ajouter un nouveau rendez-vous
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+   
+    <form role="form" id="quickForm" [formGroup]="ficheform">
+        <div class="card-body">
+        <div class="form-group">
+             
+        <label>Entreprise<span class="text-danger">*</span></label>
+        <select  formControlName="entreprise" class="form-control">
+          <option *ngFor="let entreprise of entreprises.entreprises" role="row" class="odd" [value]=entreprise.nom>{{entreprise.nom}}</option>
+          
+        </select> 
+        </div>        
+    </div>
+    <div class="card-body">
+    <div class="form-group">
+        <label for="date1">Date du premier rendez-vous<span class="text-danger"> *</span></label>
+        <input type="date" formControlName="date1" class="form-control" 
+          placeholder="date">
+<div *ngIf="date1.invalid && (date1.dirty || date1.touched)" class="alert alert-danger">
+            <div *ngIf="date1.errors.required">
+              date obligatoire
+            </div>   
+          </div>
+      </div>
+    </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="compterendu1">Compte Rendu<span class="text-danger"> *</span></label>
+          <input type="text" formControlName="compterendu1" class="form-control" 
+            placeholder="compte rendu">
+            <div *ngIf="compterendu1.invalid && (compterendu1.dirty || compterendu1.touched)" class="alert alert-danger">
+              <div *ngIf="compterendu1.errors.required">
+                Compte Rendu obligatoire
+              </div>   
+            </div>
+        </div>  
+        </div>   
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button type="submit" (click)="addNewfiche()" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
